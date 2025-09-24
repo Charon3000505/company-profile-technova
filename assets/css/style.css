@@ -1,0 +1,541 @@
+ /* ====== GLOBAL STYLES ====== */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+        }
+
+        /* ====== NAVBAR STYLES ====== */
+        .navbar {
+            background: linear-gradient(90deg, #0d6efd, #0dcaf0);
+            padding: 0.8rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(13, 110, 253, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0;
+            margin: 0 10px;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #ffe082;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar a:hover {
+            color: #ffe082 !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navbar Responsive */
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none !important;
+                flex-direction: column;
+                background: linear-gradient(90deg, #0d6efd, #0dcaf0);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 15px 0;
+                text-align: center;
+                z-index: 1000;
+            }
+
+            #menu-toggle:checked + .hamburger + .nav-links {
+                display: flex !important;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            nav > .container > ul > li:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 5px;
+            }
+        }
+
+        /* ====== HERO SECTION ====== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 120px 0 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero img {
+            margin-top: 10px;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero img:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .hero .btn {
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .hero .btn:hover::before {
+            left: 100%;
+        }
+
+        .hero .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 992px) {
+            .hero {
+                text-align: center;
+                padding: 100px 0 40px;
+            }
+
+            .hero .hero-img {
+                margin-top: 30px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        /* ====== ABOUT US SECTION ====== */
+        .about {
+            background: #f8f9fa;
+            color: #333;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0d6efd;
+            margin-bottom: 3rem;
+        }
+
+        .about h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .about img {
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Tombol Kustom */
+        .btn-about {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #0565f5;
+            color: #ffffff;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn-about:hover::before {
+            left: 100%;
+        }
+
+        .btn-about:hover {
+            background: #0b5ed7;
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 18px rgba(13, 110, 253, 0.3);
+            color: #fff;
+        }
+
+        /* ====== OUR TEAM SECTION ====== */
+        .team {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .team-card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            position: relative;
+            background: white;
+            padding: 20px 0;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .team-card:hover::before {
+            left: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            filter: grayscale(20%);
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+            border-color: #0d6efd;
+        }
+
+        /* Social icons untuk team */
+        .team-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            transition: bottom 0.3s ease;
+        }
+
+        .team-card:hover .team-social {
+            bottom: 20px;
+        }
+
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            background: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .team-social a:hover {
+            background: #ffe082;
+            transform: translateY(-3px);
+        }
+
+        /* ====== SERVICES SECTION ====== */
+        .section-bg-gray {
+            background: #e9ecef;
+            padding: 80px 0;
+        }
+
+        #services .service-card {
+            border: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            background: white;
+        }
+
+        #services .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        #services .service-card:hover::before {
+            left: 100%;
+        }
+
+        #services .service-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        #services .icon {
+            position: relative;
+            z-index: 2;
+        }
+
+        #services .icon i {
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+        }
+
+        #services .service-card:hover .icon i {
+            transform: scale(1.3) rotate(5deg);
+            background: linear-gradient(135deg, #ffe082, #ffb74d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Efek border gradient pada hover */
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #0d6efd, #0dcaf0, #ffe082, #0d6efd);
+            border-radius: 14px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+            animation: borderRotate 3s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        /* ====== CONTACT SECTION ====== */
+        .section-bg-dark {
+            background: #dee2e6;
+            padding: 80px 0;
+        }
+
+        #contact h2 {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        #contact p {
+            font-size: 16px;
+            color: #6c757d;
+        }
+
+        /* Contact Info Icons */
+        #contact i {
+            margin-right: 10px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        #contact p:hover i {
+            transform: scale(1.2);
+            color: #0d6efd;
+        }
+
+        /* Button Styling */
+        .btn-contact {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn-contact:hover::before {
+            left: 100%;
+        }
+
+        .btn-contact:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        /* Form Styling */
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+            border-color: #0d6efd;
+            transform: translateY(-2px);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            #contact .col-md-4 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            background: linear-gradient(90deg, #0d6efd, #0dcaf0);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffe082;
+            transform: translateY(-2px);
+        }
